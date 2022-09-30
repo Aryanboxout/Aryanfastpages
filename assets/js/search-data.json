@@ -3,10 +3,10 @@
     
         "post0": {
             "title": "Title",
-            "content": "FRQ Question 2 Code: . public class Textbook extends Book { private int edition; public Textbook(String bookTitle, double bookPrice, int edition) { super(bookTitle, bookPrice); this.edition = edition; } public int getEdition() { return edition; } public String getBookInfo() { return super.getBookInfo() + &quot;-&quot; + edition; } public boolean canSubstituteFor(Textbook otherTextbook) { if(this.getTitle().equals(otherTextbook.getTitle()) &amp;&amp; this.getEdition() &gt;= otherTextbook.getEdition();){ return false; } else{ return true; } } } .",
-            "url": "https://aryanboxout.github.io/Aryanfastpages/2022/09/28/FRQ-answers.html",
-            "relUrl": "/2022/09/28/FRQ-answers.html",
-            "date": " • Sep 28, 2022"
+            "content": "FRQ question 1a . Public class Game Public int getScore(){ int result=0; if(levelOne.goalReached()) { result += levelOne.getPoints(); if(levelTwo.goalReached()) { result += levelTwo.getPoints(); if(levelThree.goalReached()) { result += levelThree.getPoints(); } } } if(isBonus()) result *= 3; return result; } . Frq question 1b . public int playManyTimes(int num) { int max= Integer.MIN_VALUE for(int i=0; i&lt;num; i++){ play(); int current = getScore(); if(current&gt;max){ max=current; } } return max; } . FRQ Question 2 Code: . public class Textbook extends Book { private int edition; public Textbook(String bookTitle, double bookPrice, int edition) { super(bookTitle, bookPrice); this.edition = edition; } public int getEdition() { return edition; } public String getBookInfo() { return super.getBookInfo() + &quot;-&quot; + edition; } public boolean canSubstituteFor(Textbook otherTextbook) { if(this.getTitle().equals(otherTextbook.getTitle()) &amp;&amp; this.getEdition() &gt;= otherTextbook.getEdition();){ return false; } else{ return true; } } } .",
+            "url": "https://aryanboxout.github.io/Aryanfastpages/2022/09/29/FRQ-answers.html",
+            "relUrl": "/2022/09/29/FRQ-answers.html",
+            "date": " • Sep 29, 2022"
         }
         
     
@@ -15,9 +15,9 @@
         ,"post1": {
             "title": "Notes",
             "content": "Week 2 OOP . public: Accessible in all classes in your application. . protected: Accessible within the package in which it is defined and in its subclass(es) (including subclasses declared outside the package). . private: Accessible only within the class in which it is defined. . default (declared/defined without using any modifier): Accessible within the same class and package within which its class is defined. . The return type: The data type of the value returned by the method or void if it does not return a value . Method Name: The rules for field names apply to method names as well, but the convention is a little different. . Parameter list: Comma-separated list of the input parameters that are defined, preceded by their data type, within the enclosed parentheses. If there are no parameters, you must use empty parentheses (). . Exception list: The exceptions you expect the method to throw. You can specify these exception(s). . Method body: It is the block of code, enclosed between braces, that you need to execute to perform your intended operations. .",
-            "url": "https://aryanboxout.github.io/Aryanfastpages/2022/09/28/Collegeboard.html",
-            "relUrl": "/2022/09/28/Collegeboard.html",
-            "date": " • Sep 28, 2022"
+            "url": "https://aryanboxout.github.io/Aryanfastpages/2022/09/29/Collegeboard.html",
+            "relUrl": "/2022/09/29/Collegeboard.html",
+            "date": " • Sep 29, 2022"
         }
         
     
