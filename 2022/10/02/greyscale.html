@@ -172,7 +172,7 @@ window.onload = wrap_img;
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
 
-    <span class="c1">// Constructor obtains attributes of picture</span>
+    <span class="c1">// Constructor </span>
     <span class="kd">public</span> <span class="nf">Pics</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">String</span> <span class="n">ext</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="na">ext</span> <span class="o">=</span> <span class="n">ext</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="na">inFile</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">inDir</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span> <span class="o">+</span> <span class="n">ext</span><span class="p">;</span>
@@ -471,12 +471,12 @@ window.onload = wrap_img;
         <span class="n">Pics</span> <span class="n">dove</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pics</span><span class="p">(</span><span class="s">&quot;dove&quot;</span><span class="p">,</span> <span class="s">&quot;png&quot;</span><span class="p">);</span>
         <span class="c1">// dove.greyscale();</span>
         <span class="c1">// dove.redscale();</span>
-        <span class="n">dove</span><span class="p">.</span><span class="na">greenscale</span><span class="p">();</span>
-     <span class="n">dove</span><span class="p">.</span><span class="na">bluescale</span><span class="p">();</span>
+        <span class="c1">//dove.greenscale();</span>
+     <span class="c1">//dove.bluescale();</span>
         <span class="c1">// dove.printStats(&quot;Original&quot;);</span>
         <span class="c1">// dove.resize(33);</span>
         <span class="c1">// dove.printStats(&quot;Scaled&quot;);</span>
-        <span class="c1">//dove.convertToAscii();</span>
+        <span class="n">dove</span><span class="p">.</span><span class="na">convertToAscii</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">Pics</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
@@ -486,17 +486,67 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">The Kernel crashed while executing code in the the current cell or a previous cell. Please review the code in the cell(s) to identify a possible cause of the failure. Click &lt;a href=&#39;https://aka.ms/vscodeJupyterKernelCrash&#39;&gt;here&lt;/a&gt; for more info. View Jupyter &lt;a href=&#39;command:jupyter.viewOutput&#39;&gt;log&lt;/a&gt; for further details.</span></pre>
 </div>
-</div>
+    
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.awt.*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.image.BufferedImage</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.*</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.imageio.ImageIO</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JFrame</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GrayScale</span> <span class="p">{</span>
+
+   <span class="n">BufferedImage</span>  <span class="n">image</span><span class="p">;</span>
+   <span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
+   <span class="kt">int</span> <span class="n">height</span><span class="p">;</span>
+   
+   <span class="kd">public</span> <span class="nf">GrayScale</span><span class="p">()</span> <span class="p">{</span>
+   
+      <span class="k">try</span> <span class="p">{</span>
+         <span class="n">File</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;tate.jpeg&quot;</span><span class="p">);</span>
+         <span class="n">image</span> <span class="o">=</span> <span class="n">ImageIO</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+         <span class="n">width</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="na">getWidth</span><span class="p">();</span>
+         <span class="n">height</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="na">getHeight</span><span class="p">();</span>
+         
+         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">height</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">width</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            
+               <span class="n">Color</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">));</span>
+               <span class="kt">int</span> <span class="n">red</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">c</span><span class="p">.</span><span class="na">getRed</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.299</span><span class="p">);</span>
+               <span class="kt">int</span> <span class="n">green</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">c</span><span class="p">.</span><span class="na">getGreen</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.587</span><span class="p">);</span>
+               <span class="kt">int</span> <span class="n">blue</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">c</span><span class="p">.</span><span class="na">getBlue</span><span class="p">()</span> <span class="o">*</span><span class="mf">0.114</span><span class="p">);</span>
+               <span class="n">Color</span> <span class="n">newColor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">red</span><span class="o">+</span><span class="n">green</span><span class="o">+</span><span class="n">blue</span><span class="p">,</span>
+               
+               <span class="n">red</span><span class="o">+</span><span class="n">green</span><span class="o">+</span><span class="n">blue</span><span class="p">,</span><span class="n">red</span><span class="o">+</span><span class="n">green</span><span class="o">+</span><span class="n">blue</span><span class="p">);</span>
+               
+               <span class="n">image</span><span class="p">.</span><span class="na">setRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">newColor</span><span class="p">.</span><span class="na">getRGB</span><span class="p">());</span>
+            <span class="p">}</span>
+         <span class="p">}</span>
+         
+         <span class="n">File</span> <span class="n">ouptut</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;grayscale.jpg&quot;</span><span class="p">);</span>
+         <span class="n">ImageIO</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">tate</span><span class="p">,</span> <span class="s">&quot;jpeg&quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">);</span>
+         
+      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{}</span>
+   <span class="p">}</span>
+   
+   <span class="kd">static</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+      <span class="n">GrayScale</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GrayScale</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
