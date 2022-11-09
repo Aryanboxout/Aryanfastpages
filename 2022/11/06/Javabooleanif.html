@@ -383,11 +383,16 @@ There are seven basic logic gates: AND, OR, XOR, NOT, NAND, NOR, and XNOR.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="c1">//2009 3b</span>
+
+
+
 <span class="kd">private</span> <span class="kt">int</span> <span class="nf">getChargingCost</span><span class="p">(</span><span class="kt">int</span> <span class="n">startHour</span><span class="p">,</span> <span class="kt">int</span> <span class="n">chargeTime</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">cost</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="kt">int</span> <span class="n">rIndex</span> <span class="o">=</span> <span class="n">startHour</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">hoursRemaining</span> <span class="o">=</span> <span class="n">chargeTime</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">hoursRemaining</span> <span class="o">=</span> <span class="n">chargeTime</span><span class="p">;</span>  
+
+
   
   <span class="k">while</span><span class="p">(</span><span class="n">hoursRemaining</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
   <span class="p">{</span>
@@ -401,6 +406,8 @@ There are seven basic logic gates: AND, OR, XOR, NOT, NAND, NOR, and XNOR.</p>
   <span class="p">}</span>
   
   <span class="k">return</span> <span class="n">cost</span><span class="p">;</span>
+
+  <span class="c1">//final cost returned</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -422,7 +429,7 @@ There are seven basic logic gates: AND, OR, XOR, NOT, NAND, NOR, and XNOR.</p>
 
 <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isStrictlyIncreasing</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">digitList</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">digitList</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>  <span class="c1">//checks if values increasing</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">digitList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">intValue</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">digitList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">).</span><span class="na">intValue</span><span class="p">())</span>
 <span class="p">{</span>
@@ -457,13 +464,13 @@ There are seven basic logic gates: AND, OR, XOR, NOT, NAND, NOR, and XNOR.</p>
 
   <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">additionalDays</span><span class="p">;</span> <span class="n">d</span><span class="o">++</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">weekday</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">weekday</span><span class="o">++</span><span class="p">;</span> <span class="c1">//add one to weekday</span>
 
     <span class="k">if</span><span class="p">(</span><span class="n">weekday</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span>
-      <span class="n">weekday</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">weekday</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//set to 0</span>
   <span class="p">}</span>
         
-  <span class="k">return</span> <span class="n">weekday</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">weekday</span><span class="p">;</span> 
 <span class="p">}</span>
 </pre></div>
 

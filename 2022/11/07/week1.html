@@ -269,6 +269,8 @@ The integer value: 10
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">double</span> <span class="nf">purchasePrice</span><span class="p">()</span>
  <span class="p">{</span>
    <span class="k">return</span> <span class="n">getListPrice</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">taxRate</span><span class="p">);</span>
+
+   <span class="c1">//Tax rate is a boolean variable declared in question</span>
  <span class="p">}</span>
 </pre></div>
 
@@ -296,7 +298,8 @@ The integer value: 10
     <span class="k">else</span> 
     <span class="p">{</span> 
         
-        <span class="k">return</span> <span class="n">getID</span><span class="p">()</span> <span class="o">-</span> <span class="n">other</span><span class="p">.</span><span class="na">getID</span><span class="p">();</span> 
+        <span class="k">return</span> <span class="n">getID</span><span class="p">()</span> <span class="o">-</span> <span class="n">other</span><span class="p">.</span><span class="na">getID</span><span class="p">();</span>  <span class="c1">//id is integer here</span>
+        <span class="c1">//greater integer</span>
     <span class="p">}</span> 
 <span class="p">}</span>
 </pre></div>

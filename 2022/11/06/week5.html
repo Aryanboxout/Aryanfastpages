@@ -169,7 +169,7 @@ Constructors are used for initializing new objects. Fields are variables that pr
   <span class="p">{</span>
     <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">();</span>
 
-    <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">&lt;=</span> <span class="n">secret</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">secret</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="n">guess</span><span class="p">))</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">&lt;=</span> <span class="n">secret</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">secret</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="n">guess</span><span class="p">))</span>  <span class="c1">//check if substring are equal to secret</span>
       <span class="n">count</span><span class="o">++</span><span class="p">;</span>
   <span class="p">}</span>
 
@@ -196,7 +196,7 @@ Constructors are used for initializing new objects. Fields are variables that pr
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addMembers</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">names</span><span class="p">,</span> <span class="kt">int</span> <span class="n">gradYear</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">for</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span> <span class="p">:</span> <span class="n">names</span><span class="p">)</span>
-    <span class="n">memberList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MemberInfo</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">gradYear</span><span class="p">,</span> <span class="kc">true</span><span class="p">));</span>
+    <span class="n">memberList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MemberInfo</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">gradYear</span><span class="p">,</span> <span class="kc">true</span><span class="p">));</span>  <span class="c1">//included parameters here for members</span>
 <span class="p">}</span>
 </pre></div>
 
