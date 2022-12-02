@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -127,6 +127,66 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Java Math class</p>
+<p>provides several methods to work on math calculations like min(), max(), avg(), sin(), cos(), tan(), round(), ceil(), floor(), abs() etc.</p>
+<p>Unlike some of the StrictMath class numeric methods, all implementations of the equivalent function of Math class can't define to return the bit-for-bit same results. This relaxation permits implementation with better-performance where strict reproducibility is not required.</p>
+<p>If the size is int or long and the results overflow the range of value, the methods addExact(), subtractExact(), multiplyExact(), and toIntExact() throw an ArithmeticException.</p>
+<p>For other arithmetic operations like increment, decrement, divide, absolute value, and negation overflow occur only with a specific minimum or maximum value. It should be checked against the maximum and minimum value as appropriate.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="o">/*</span>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JavaMathExample1</span>    
+<span class="p">{</span>    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>     
+    <span class="p">{</span>    
+        <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">28</span><span class="p">;</span>    
+        <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>    
+          
+        <span class="c1">// return the maximum of two numbers  </span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Maximum number of x and y is: &quot;</span> <span class="o">+</span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">));</span>   
+          
+        <span class="c1">// return the square root of y   </span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Square root of y is: &quot;</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">y</span><span class="p">));</span>   
+          
+        <span class="c1">//returns 28 power of 4 i.e. 28*28*28*28    </span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Power of x and y is: &quot;</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">));</span>      
+  
+        <span class="c1">// return the logarithm of given value       </span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Logarithm of x is: &quot;</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>   
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Logarithm of y is: &quot;</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">y</span><span class="p">));</span>  
+          
+        <span class="c1">// return the logarithm of given value when base is 10      </span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;log10 of x is: &quot;</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">log10</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>   
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;log10 of y is: &quot;</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">log10</span><span class="p">(</span><span class="n">y</span><span class="p">));</span>    
+          
+        <span class="c1">// return the log of x + 1  </span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;log1p of x is: &quot;</span> <span class="o">+</span><span class="n">Math</span><span class="p">.</span><span class="na">log1p</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>    
+  
+        <span class="c1">// return a power of 2    </span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;exp of a is: &quot;</span> <span class="o">+</span><span class="n">Math</span><span class="p">.</span><span class="na">exp</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>    
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">JavaMathExample1</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>OOP notes</p>
 <p>As the name suggests, Object-Oriented Programming or OOPs refers to languages that use objects in programming, they use objects as a primary source to implement what is to happen in the code. Objects are seen by the viewer or user, performing tasks assigned by you. Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism etc. in programming. The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.</p>
 <p>Let us discuss prerequisites by polishing concepts of method declaration and message passing. Starting off with the method declaration, it consists of six components:</p>
@@ -153,7 +213,7 @@ Method body: It is the block of code, enclosed between braces, that you need to 
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
+<div class=" highlight hl-java"><pre><span></span><span class="o">/*</span>    <span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Goblin</span> <span class="p">{</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">HP</span><span class="p">;</span>
@@ -263,47 +323,6 @@ Method body: It is the block of code, enclosed between braces, that you need to 
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hit
-jeffrey takes 1 damage
-jeffrey HP: 11
-Gunther the great takes 2 damage
-Gunther the great HP: 2
-Hit
-jeffrey takes 1 damage
-jeffrey HP: 10
-Gunther the great takes 2 damage
-Gunther the great HP: 0
-Gunther the great has perished
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">gob.txt</span>
-<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">3 </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">KB</span>
-<span class="ansi-red-intense-fg ansi-bold">not a statement</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">gob</span><span class="ansi-black-intense-fg ansi-bold">.txt</span>
-<span class="ansi-red-intense-fg ansi-bold">cannot find symbol</span>
-<span class="ansi-red-intense-fg ansi-bold">  symbol:   variable gob</span>
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -335,7 +354,7 @@ Gunther the great has perished
       </div>
     </div>
 
-    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/Aryanfastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/Aryanfastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+    <div class="social-links"><ul class="social-media-list"></ul>
 </div>
 
   </div>
