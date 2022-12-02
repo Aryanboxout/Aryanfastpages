@@ -489,6 +489,62 @@ There are seven basic logic gates: AND, OR, XOR, NOT, NAND, NOR, and XNOR.</p>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Compound Boolean Expression</p>
+<p>What if you want to go out and your parents say you can go out if you clean your room and do your homework? Run the code below and try different values for cleanedRoom and didHomework and see what they have to be for it to print You can go out.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span>
+<span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+   <span class="p">{</span>
+     <span class="kt">boolean</span> <span class="n">cleanedRoom</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+     <span class="kt">boolean</span> <span class="n">didHomework</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">cleanedRoom</span> <span class="o">&amp;&amp;</span> <span class="n">didHomework</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You can go out&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="k">else</span>
+     <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;No, you can&#39;t go out&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>No, you can&#39;t go out
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
