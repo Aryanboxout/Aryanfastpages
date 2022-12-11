@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -178,8 +178,89 @@ Bonus of Programmer is:10000
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>In Java, a constructor is a special method that is used to create and initialize an object. It has the same name as the class and is called when a new instance of the class is created.</p>
+<p>Constructors for subclasses work in a similar way to constructors for regular classes, but with some important differences. When creating a subclass, you typically want to reuse the constructor from the parent class (also known as the "superclass") and add some additional functionality. This is done using the "super" keyword.</p>
+<p>Here is an example of a simple class hierarchy with a parent class called "Animal" and a child class called "Dog":</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="c1">// Constructor for the Animal class</span>
+    <span class="kd">public</span> <span class="nf">Animal</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// Initialize the object</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="c1">// Constructor for the Dog class</span>
+    <span class="kd">public</span> <span class="nf">Dog</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// Call the constructor of the superclass</span>
+      <span class="kd">super</span><span class="p">();</span>
+      
+      <span class="c1">// Initialize the object</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the example above, the constructor for the "Dog" class calls the constructor of the "Animal" class using the "super" keyword. This ensures that the object is properly initialized according to the parent class's constructor, and then additional initialization can be done in the subclass's constructor.</p>
+<p>It is also possible to call a specific constructor of the superclass by specifying the parameters, like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>In this example using inheritance allows us to inherit the salary of the programmer by extending the superclass of employee</p>
-<p>Here is an example of writing constructors for subclasses</p>
+<p>Here is another example of writing constructors for subclasses</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="p">{</span>
+  <span class="c1">// Constructor for the Dog class</span>
+  <span class="kd">public</span> <span class="nf">Dog</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Call the constructor of the superclass with a specific parameter</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+    
+    <span class="c1">// Initialize the object</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this case, the "Dog" class's constructor calls the "Animal" class's constructor with a specific parameter (the "name" of the animal). This allows the subclass to reuse the functionality of the parent class's constructor, but with some additional customization.</p>
 
 </div>
 </div>
