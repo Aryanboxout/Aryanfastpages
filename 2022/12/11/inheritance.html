@@ -294,6 +294,48 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Overriding methods</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">Vehicle</span><span class="p">{</span>  
+    <span class="kt">void</span> <span class="nf">run</span><span class="p">(){</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Vehicle is running&quot;</span><span class="p">);}</span>  
+  <span class="p">}</span>  
+  <span class="c1">//Creating a child class  </span>
+  <span class="kd">class</span> <span class="nc">Bike</span> <span class="kd">extends</span> <span class="n">Vehicle</span><span class="p">{</span>  
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">){</span>  
+    <span class="c1">//creating an instance of child class  </span>
+    <span class="n">Bike</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bike</span><span class="p">();</span>  
+    <span class="c1">//calling the method with child class instance  </span>
+    <span class="n">obj</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>  
+    <span class="p">}</span>  
+  <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Homework(Due Wednesday):</p>
+
+</div>
+</div>
+</div>
 </div>
 
 
