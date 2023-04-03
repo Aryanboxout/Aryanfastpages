@@ -93,9 +93,27 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+
+<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Element found at index 4
+Element found at index 4
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -125,19 +143,68 @@
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Public</span> <span class="kd">class</span> <span class="nc">Maps</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Maps</span> <span class="p">{</span>
 
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> 
 <span class="p">{</span>
 
+<span class="c1">//This map will allow us to hold employee names which are strings with there ids which are integers</span>
+  
+<span class="n">map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">empIds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashmap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-    <span class="n">Hashmap</span> <span class="n">empIds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashmap</span><span class="p">();</span>
+<span class="n">empIds</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Mohammed&quot;</span><span class="p">,</span> <span class="mi">92125</span><span class="p">);</span>
+<span class="n">empIds</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;shaun&quot;</span><span class="p">,</span> <span class="mi">92125</span><span class="p">);</span>
+<span class="n">empIds</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Tony&quot;</span><span class="p">,</span> <span class="mi">92125</span><span class="p">);</span>
+<span class="n">empIds</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Sanjay&quot;</span><span class="p">,</span> <span class="mi">92125</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">empIds</span><span class="p">);</span>
+
 <span class="p">}</span>
 
 <span class="p">}</span>
+
+
+<span class="n">Maps</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">public class Maps {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">public static void main(String[] args) </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">{</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">//This map will allow us to hold employee names which are strings with there ids which are integers</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">  </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">map&lt;String, Integer&gt; empIds = new Hashmap&lt;&gt;();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">empIds.put(&#34;Mohammed&#34;, 92125);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">empIds.put(&#34;shaun&#34;, 92125);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">empIds.put(&#34;Tony&#34;, 92125);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">empIds.put(&#34;Sanjay&#34;, 92125);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">System.out.println(empIds);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">}</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">}</span>
+<span class="ansi-red-intense-fg ansi-bold">Unresolved dependencies:</span>
+<span class="ansi-red-intense-fg ansi-bold">   - class map</span>
+<span class="ansi-red-intense-fg ansi-bold">   - class Hashmap</span></pre>
+</div>
+</div>
+
 </div>
 </div>
 
