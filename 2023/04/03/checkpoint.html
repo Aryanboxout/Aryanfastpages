@@ -7,7 +7,7 @@
        • <span class="read-time" title="Estimated read time">
     
     
-      115 min read
+      118 min read
     
 </span></p>
 
@@ -5296,6 +5296,231 @@ Key: 65535, Value: value1590
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Average hash map lookup time: 366629 nanoseconds
 Average binary search time: 2091741 nanoseconds
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Book</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">bookCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// One-argument constructor for title</span>
+    <span class="kd">public</span> <span class="nf">Book</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">id</span> <span class="o">=</span> <span class="o">++</span><span class="n">bookCount</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// Getter for BookCount</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getBookCount</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">bookCount</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// Override toString() method to return title</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Book</span> <span class="n">book1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Book</span><span class="p">(</span><span class="err">“</span><span class="n">Boy</span> <span class="n">With</span> <span class="n">The</span> <span class="n">Striped</span> <span class="n">Pajamas</span><span class="err">”</span><span class="p">);</span>
+        <span class="n">Book</span> <span class="n">book2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Book</span><span class="p">(</span><span class="err">“</span><span class="n">Refugee</span><span class="err">”</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">Book</span> <span class="mi">1</span> <span class="n">ID</span><span class="p">:</span> <span class="err">”</span> <span class="o">+</span> <span class="n">book1</span><span class="p">.</span><span class="na">id</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">Book</span> <span class="mi">1</span> <span class="n">Title</span><span class="p">:</span> <span class="err">”</span> <span class="o">+</span> <span class="n">book1</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">Book</span> <span class="mi">2</span> <span class="n">ID</span><span class="p">:</span> <span class="err">”</span> <span class="o">+</span> <span class="n">book2</span><span class="p">.</span><span class="na">id</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">Book</span> <span class="mi">2</span> <span class="n">Title</span><span class="p">:</span> <span class="err">”</span> <span class="o">+</span> <span class="n">book2</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="err">“</span><span class="n">Total</span> <span class="n">books</span> <span class="n">in</span> <span class="n">library</span><span class="p">:</span> <span class="err">”</span> <span class="o">+</span> <span class="n">Book</span><span class="p">.</span><span class="na">getBookCount</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Book</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        Book book1 = new Book(</span><span class="ansi-black-intense-fg ansi-bold">“Boy With The Striped Pajamas”);</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201c&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        Book book1 = new Book(“Boy With</span><span class="ansi-black-intense-fg ansi-bold"> The Striped Pajamas”);</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        Book book1 = new Book(“Boy With The Striped</span><span class="ansi-black-intense-fg ansi-bold"> Pajamas”);</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        Book book1 = new Book(“Boy With The Striped Pajamas</span><span class="ansi-black-intense-fg ansi-bold">”);</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201d&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        Book book1 = new Book(“Boy With The Striped </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">Pajamas</span><span class="ansi-black-intense-fg ansi-bold">”);</span>
+<span class="ansi-red-intense-fg ansi-bold">not a statement</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        Book book2 = new Book(</span><span class="ansi-black-intense-fg ansi-bold">“Refugee”);</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201c&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        Book book2 = new Book(“Refugee</span><span class="ansi-black-intense-fg ansi-bold">”);</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201d&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        Book book2 = new Book(“</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">Refugee</span><span class="ansi-black-intense-fg ansi-bold">”);</span>
+<span class="ansi-red-intense-fg ansi-bold">not a statement</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(</span><span class="ansi-black-intense-fg ansi-bold">“Book 1 ID: ” + book1.id);</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201c&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">Book</span><span class="ansi-black-intense-fg ansi-bold"> 1 ID: ” + book1.id);</span>
+<span class="ansi-red-intense-fg ansi-bold">not a statement</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book</span><span class="ansi-black-intense-fg ansi-bold"> 1 ID: ” + book1.id);</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book 1 ID: </span><span class="ansi-black-intense-fg ansi-bold">” + book1.id);</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201d&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book 1 ID: ” + </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">book1.id</span><span class="ansi-black-intense-fg ansi-bold">);</span>
+<span class="ansi-red-intense-fg ansi-bold">not a statement</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book 1 ID: ” + book1.id</span><span class="ansi-black-intense-fg ansi-bold">);</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(</span><span class="ansi-black-intense-fg ansi-bold">“Book 1 Title: ” + book1.toString());</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201c&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">Book</span><span class="ansi-black-intense-fg ansi-bold"> 1 Title: ” + book1.toString());</span>
+<span class="ansi-red-intense-fg ansi-bold">not a statement</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book</span><span class="ansi-black-intense-fg ansi-bold"> 1 Title: ” + book1.toString());</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book 1 Title: </span><span class="ansi-black-intense-fg ansi-bold">” + book1.toString());</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201d&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book 1 Title: ” + book1.toString()</span><span class="ansi-black-intense-fg ansi-bold">);</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(</span><span class="ansi-black-intense-fg ansi-bold">“Book 2 ID: ” + book2.id);</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201c&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">Book</span><span class="ansi-black-intense-fg ansi-bold"> 2 ID: ” + book2.id);</span>
+<span class="ansi-red-intense-fg ansi-bold">not a statement</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book</span><span class="ansi-black-intense-fg ansi-bold"> 2 ID: ” + book2.id);</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book 2 ID: </span><span class="ansi-black-intense-fg ansi-bold">” + book2.id);</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201d&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book 2 ID: ” + </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">book2.id</span><span class="ansi-black-intense-fg ansi-bold">);</span>
+<span class="ansi-red-intense-fg ansi-bold">not a statement</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book 2 ID: ” + book2.id</span><span class="ansi-black-intense-fg ansi-bold">);</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(</span><span class="ansi-black-intense-fg ansi-bold">“Book 2 Title: ” + book2.toString());</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201c&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">Book</span><span class="ansi-black-intense-fg ansi-bold"> 2 Title: ” + book2.toString());</span>
+<span class="ansi-red-intense-fg ansi-bold">not a statement</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book</span><span class="ansi-black-intense-fg ansi-bold"> 2 Title: ” + book2.toString());</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book 2 Title: </span><span class="ansi-black-intense-fg ansi-bold">” + book2.toString());</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201d&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Book 2 Title: ” + book2.toString()</span><span class="ansi-black-intense-fg ansi-bold">);</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(</span><span class="ansi-black-intense-fg ansi-bold">“Total books in library: ” + Book.getBookCount());</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201c&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Total books</span><span class="ansi-black-intense-fg ansi-bold"> in library: ” + Book.getBookCount());</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Total books in library</span><span class="ansi-black-intense-fg ansi-bold">: ” + Book.getBookCount());</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Total books in library: </span><span class="ansi-black-intense-fg ansi-bold">” + Book.getBookCount());</span>
+<span class="ansi-red-intense-fg ansi-bold">illegal character: &#39;\u201d&#39;</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(“Total books in library: ” + Book.getBookCount()</span><span class="ansi-black-intense-fg ansi-bold">);</span>
+<span class="ansi-red-intense-fg ansi-bold">&#39;;&#39; expected</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Title</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">bookCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Title</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">id</span> <span class="o">=</span> <span class="o">++</span><span class="n">bookCount</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getBookCount</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">bookCount</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">tester</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Title</span> <span class="n">book1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Title</span><span class="p">(</span><span class="s">&quot;The Great Gatsby&quot;</span><span class="p">);</span>
+        <span class="n">Title</span> <span class="n">book2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Title</span><span class="p">(</span><span class="s">&quot;To Kill a Mockingbird&quot;</span><span class="p">);</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Book &quot;</span> <span class="o">+</span> <span class="n">book1</span><span class="p">.</span><span class="na">id</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="n">book1</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Book &quot;</span> <span class="o">+</span> <span class="n">book2</span><span class="p">.</span><span class="na">id</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="n">book2</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Total number of books in library: &quot;</span> <span class="o">+</span> <span class="n">getBookCount</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Title</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">Title.main</span><span class="ansi-black-intense-fg ansi-bold">(null);</span>
+<span class="ansi-red-intense-fg ansi-bold">cannot find symbol</span>
+<span class="ansi-red-intense-fg ansi-bold">  symbol:   method main(&lt;nulltype&gt;)</span>
 </pre>
 </div>
 </div>
